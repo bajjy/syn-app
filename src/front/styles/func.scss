@@ -1,0 +1,7 @@
+@mixin transitions ($speed: 0.4s, $props: All, $fn: ease) {
+	-webkit-transition: $props $speed $fn;
+	-moz-transition: $props $speed $fn;
+	-o-transition: $props $speed $fn;
+	-ms-transition: $props $speed $fn;
+	transition: $props $speed $fn;
+}
