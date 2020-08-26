@@ -2,7 +2,7 @@ import { app, BrowserWindow, Menu } from 'electron';
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
 
-function setMainMenu() {
+function setMainMenu(mainWindow: any) {
   const template = [
     {
       label: 'File',
@@ -11,6 +11,12 @@ function setMainMenu() {
           label: 'Exit',
           click() {
             app.quit();
+          }
+        },
+        {
+          label: 'Tools',
+          click() {
+            mainWindow.webContents.openDevTools();
           }
         }
       ]
@@ -27,7 +33,7 @@ const createWindow = () => {
 
   // Create the browser window.
   
-  const mainWindow = new BrowserWindow({
+  var mainWindow = new BrowserWindow({
     height: 600,
     width: 800,
   });
@@ -37,7 +43,7 @@ const createWindow = () => {
   // Open the DevTools if you need.
   // mainWindow.webContents.openDevTools();
 
-  setMainMenu();
+  setMainMenu(mainWindow);
 };
 
 app.on('ready', createWindow);
