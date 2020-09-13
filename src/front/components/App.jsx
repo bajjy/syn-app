@@ -1,3 +1,5 @@
+import GlobalStyle from '../styles/globalStyle.js';
+
 import React, { useState } from 'react';
 import ModalClicks from "./ModalClicks";
 import CustomModal from "./CustomModal";
@@ -12,6 +14,7 @@ function App() {
 
   return (
     <div className={` root-container ${state.modalOpened ? 'opened' : 'idle'}`}>
+      <GlobalStyle />
       <header className="header">syn-app</header>
       <div className="container">
         <div className="container">

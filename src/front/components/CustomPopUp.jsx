@@ -1,3 +1,5 @@
+import CustomPopUpDiv from "../styles/customPopUpDiv.js";
+
 import React from "react"
 import useModals from "../hooks/useModals";
 
@@ -12,14 +14,14 @@ function CustomModal(props) {
 
   return (
     <>
-      <div className={` modal ${modalOpened ? 'opened' : 'idle'} ${modalOpened}`} onClick={handleCloseModal}>
+      <CustomPopUpDiv opened={modalOpened} className={` modal ${modalOpened ? 'opened' : 'idle'} ${modalOpened}`} onClick={handleCloseModal}>
         <div className="modal_content">
           <span className="close" onClick={handleClose}>&times;</span>
           
         <h1>modal click'n close: {modalClicks}</h1>
           <p>I'm A Pop Up. Everyone hates me!</p>
         </div>
-      </div>
+      </CustomPopUpDiv>
     </>
   )
 }
